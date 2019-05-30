@@ -75,14 +75,14 @@ For every click of a button there are 2 newly created functions!
 <figure>
   <img src="/images/blog/React useCallback and useMemo Hooks By Example/without-use-callback.png" alt="Without useCallback" >
   <figcaption>
-    For every re-render of the component, 2 new functions are created. 
-    In this example, 5 state changes result in 10 new functions.
+    In this example, 5 state changes result in 10 new callback functions.
+    If these new functions are passed to the child components, they'll cause
+    them to re-render unnecessarily.
   </figcaption>
 </figure>
 
-In other words, at every re-render we're creating 2 new functions, which is excessive.
-If we increment `c1`, why do we need to recreate the `increment2` function?
-This is not just about memory. 
+In other words, at every re-render we're creating 2 new callbacl functions, which is excessive.
+If we increment `c1`, why do we need to recreate the `increment2` callback? 
 What if we pass `increment2` as a property to a future child component? 
 It will needlessly re-render on evey change of `c1`, because 
 the function instance of `increment2` will also change.
