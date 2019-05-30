@@ -81,7 +81,7 @@ For every click of a button there are 2 newly created functions!
   </figcaption>
 </figure>
 
-In other words, at every re-render we're creating 2 new callbacl functions, which is excessive.
+In other words, at every re-render we're creating 2 new callback functions, which is excessive.
 If we increment `c1`, why do we need to recreate the `increment2` callback? 
 What if we pass `increment2` as a property to a future child component? 
 It will needlessly re-render on evey change of `c1`, because 
